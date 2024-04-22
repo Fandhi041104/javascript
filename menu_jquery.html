@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Menu</title>
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <style>
+        #main-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #main-menu li {
+            display: inline;
+        }
+
+        #main-menu a {
+            text-decoration: none;
+            color: black;
+            padding: 5px 10px;
+        }
+
+        #main-menu ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            z-index: 100;
+        }
+
+        #main-menu ul li ul li {
+            display: block;
+        }
+
+        #main-menu ul li ul a {
+            padding: 10px;
+        }
+
+        #main-menu li:hover ul {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav id="main-menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Services</a>
+                <ul>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Graphic Design</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <script>
+
+    </script>
+</body>
+</html>

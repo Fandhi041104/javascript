@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Penggunaan jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <div id="myElement">Ini adalah elemen yang akan disembunyikan/ditampilkan</div>
+
+    <button id="hideButton">Sembunyikan</button>
+    <button id="showButton">Tampilkan</button>
+    
+    <script>
+      $(document).ready(function() {
+        $("#hideButton").click(function() {
+          $("#myElement").hide();
+        });
+    
+        $("#showButton").click(function() {
+          $("#myElement").show();
+        });
+      });
+    </script>
+</body>
+</html>

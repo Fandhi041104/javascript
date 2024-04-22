@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Dialog Progressbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <style>
+        #dialog-box {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            
+        }  
+
+        #dialog-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        #progress-bar {
+            margin-top: 20px;
+            width: 100%;
+            height: 20px;
+            background-color: #ccc;
+            border: 1px solid #888;
+        }
+
+        #progress {
+            height: 100%;
+            background-color: #4CAF50;
+            width: 0%;
+        }
+
+        #close-button {
+            margin-top: 20px;
+            padding: 5px 10px;
+            background-color: #ccc;
+            border: 1px solid #888;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="open-dialog-button">Unduh File</button>
+
+    <div id="dialog-box">
+        <div id="dialog-content">
+            <h2>Unduh File</h2>
+            <p>Nama File: file.zip</p>
+            <div id="progress-bar">
+                <div id="progress"></div>
+            </div>
+            <button id="close-button">Tutup Dialog</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            function simulateDownload() {
+                var progress = 0;
+                var progressBar = $("#progress");
+
+                var intervalId = setInterval(function() {
+                    progress += 1; 
+                    progressBar.css("width", progress + "%");
+
+                    if (progress === 100) {
+                        clearInterval(intervalId);
+                        alert("File downloaded successfully!");
+                        $("#dialog-box").hide();
+                    }
+                }, 100);
+            }
+
+            $("#open-dialog-button").click(function() {
+                $("#dialog-box").show();
+                simulateDownload(); 
+            });
+
+            $("#close-button").click(function() {
+                $("#dialog-box").hide();
+            });
+        });
+    </script>
+</body>
+</html>
